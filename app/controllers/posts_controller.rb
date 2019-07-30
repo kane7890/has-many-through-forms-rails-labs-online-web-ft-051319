@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
+
+    # byebug
   end
 
   def index
@@ -12,8 +14,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    # pparams=post_params
+    # byebug
     post = Post.create(post_params)
-    redirect_to post
+    redirect_to post_path(post)
   end
 
   private
